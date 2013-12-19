@@ -7,6 +7,7 @@ class AssetsGenerator < Rails::Generators::Base
   end
 
   def add_gems_to_gemfile
+  	gem 'jquery-ui-rails', '2.0.2'
   	gem 'momentjs-rails' 								# client-side time formatting
   	gem 'rickshaw_rails'                # graphing with scatter plots
   end
@@ -35,27 +36,18 @@ class AssetsGenerator < Rails::Generators::Base
 
   def copy_over_vendor_javascripts
   	puts "Copying over vendor javascripts..."
-  	Dir["vendor/javascripts/*"].each do |source|
-  		destination = "vendor/assets/javascripts/#{File.basename(source)}"
-  		add_if_new(source, destination)
-  	end
+  	puts "File path: #{file_path}/vendor/javascripts/*"
+  	FileUtils.cp_r "#{file_path}/vendor/javascripts/", 'vendor/assets'
   end
 
   def copy_over_vendor_stylesheets
   	puts "Copying over vendor stylesheets..."
-  	Dir["vendor/stylesheets/*"].each do |source|
-  		destination = "vendor/assets/stylesheets/#{File.basename(source)}"
-  		add_if_new(source, destination)
-  	end
+  	puts "File path: #{file_path}/vendor/stylesheets/*"
+  	FileUtils.cp_r "#{file_path}/vendor/stylesheets/", 'vendor/assets'
   end
 
-  def add_if_new(source, destination)
-		if File.exist?(destination)
-			puts "Skipping #{destination} because it already exists"
-		else
-			puts "Adding #{destination} to vendor assets..."
-			FileUtils.cp(source, destination)
-		end
+  def file_path
+  	File.expand_path('../templates', __FILE__)
   end
 
   # def mk_layout_dirs

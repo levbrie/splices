@@ -67,3 +67,4 @@ gem 'redcarpet'
 gem 'fabrication'										# object generation library
 gem "momentjs-rails"
 gem "rickshaw_rails"
+gem "jquery-ui-rails", "2.0.2"
