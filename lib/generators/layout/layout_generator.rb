@@ -31,9 +31,9 @@ class LayoutGenerator < Rails::Generators::Base
   end
 
   def mk_layout_dirs
-  	FileUtils.mkdir "#{view_path}head"
-  	FileUtils.mkdir "#{view_path}frame"
-  	FileUtils.mkdir "#{view_path}content"
-  	FileUtils.mkdir "app/views/shared"
+  	FileUtils.mkdir_p "#{view_path}head"
+  	FileUtils.mkdir_p "#{view_path}frame"
+  	FileUtils.mkdir_p "#{view_path}content"
+  	FileUtils.mkdir_p "app/views/shared"
   end
 end
