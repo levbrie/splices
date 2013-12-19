@@ -1,0 +1,29 @@
+<!-- modal content -->
+<div id="contactModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-body">
+    <%%= link_to "", root_path, class: 'logo' %>
+    <h5>INTERESTED IN LEARNING MORE?  LET'S TALK!</h5>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputName" placeholder="Input Your Full Name">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputEmail" placeholder="Your Email">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputPhone" placeholder="Your Phone Number">
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </form>
+    <button id="close" class="btn" data-dismiss="modal">Close</button>
+  </div>
+</div>
+

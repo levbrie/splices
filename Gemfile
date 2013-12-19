@@ -22,6 +22,9 @@ gem 'rickshaw_rails'                # graphing with scatter plots
 gem 'devise'												# Authentication
 gem 'high_voltage'									# STATIC PAGES
 
+gem 'haml'
+gem 'haml-rails'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara', '2.2.0'
