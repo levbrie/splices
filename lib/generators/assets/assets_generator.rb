@@ -27,6 +27,10 @@ class AssetsGenerator < Rails::Generators::Base
 		git commit: "-m 'add vendor assets and update asset pipeline'"
   end
 
+  def run_bundler
+  	run 'bundle install'
+  end
+
   private
 
   def copy_over_vendor_javascripts
