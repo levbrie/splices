@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def app_title
+  def app_name
     "splice"
   end
 

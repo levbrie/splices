@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def app_title
+  def app_name
     "<%= app_name %>"
   end
 
