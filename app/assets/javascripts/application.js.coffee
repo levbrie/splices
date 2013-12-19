@@ -5,7 +5,6 @@
 #= require jquery.turbolinks
 #= require moment
 #= require time/livestamp
-#= require chosen-jquery
 #= require_self
 #= require bootstrap
 #= require datatables/jquery.dataTables.min

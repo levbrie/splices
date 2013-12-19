@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <%%= render 'layouts/head/head' %>
-<body id="app" class="controller_name action_name">
+<body id="app" class="<%%= controller_name %> <%%= action_name %>">
 	<section class="hbox stretch">
 		<%%= render "layouts/frame/<%= file_name %>_sidebar" %>
 		<section id="content">
