@@ -20,6 +20,11 @@ class LayoutGenerator < Rails::Generators::Base
   	template	"shared/notifications.html.erb", "app/views/shared/_notifications.html.erb"
   end
 
+  def git_commit
+    git add: "--all"
+    git commit: "-m 'generate layout and ui frame for application'"
+  end
+
   private
 
   def file_name

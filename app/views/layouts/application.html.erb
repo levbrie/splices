@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<%= render 'layouts/head/head' %>
+<body id="app" class="controller_name action_name">
+	<section class="hbox stretch">
+		<%= render "layouts/frame/application_sidebar" %>
+		<section id="content">
+			<%= render 'layouts/frame/header' %>
+			<%= render 'layouts/frame/modal_contact' %>
+			<section class="vbox">
+				<%= render "layouts/content/application_body" %>
+			</section>
+		</section>
+	</section>
+</body>
+</html>
