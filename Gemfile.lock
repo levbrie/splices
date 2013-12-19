@@ -116,6 +116,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     haml (4.0.4)
       tilt
+    high_voltage (2.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -320,6 +321,7 @@ DEPENDENCIES
   growl
   guard
   guard-rspec
+  high_voltage
   jbuilder (~> 1.2)
   jquery-rails
   launchy

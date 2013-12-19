@@ -19,9 +19,8 @@ gem 'mailcatcher'
 
 # GRAPHING
 gem 'rickshaw_rails'                # graphing with scatter plots
-
-# Authentication
-gem 'devise'
+gem 'devise'												# Authentication
+gem 'high_voltage'									# STATIC PAGES
 
 group :development, :test do
   gem 'rspec-rails'
