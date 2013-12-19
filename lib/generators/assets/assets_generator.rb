@@ -13,13 +13,13 @@ class AssetsGenerator < Rails::Generators::Base
 
   def generate_js_manifest
   	remove_file "app/assets/javascripts/application.js"
-  	copy_file "javascripts/application.js.coffee", "app/assets/javascripts/application.js.coffee"
+  	copy_file 	"javascripts/application.js.coffee", "app/assets/javascripts/application.js.coffee"
   end
 
   def generate_stylesheets_manifest
   	remove_file "app/assets/stylesheets/application.css"
-  	copy_file "stylesheets/application.css", "app/assets/stylesheets/application.css"
-  	copy_file "stylesheets/main.css.scss", "app/assets/stylesheets/main.css.scss"
+  	copy_file 	"stylesheets/application.css", "app/assets/stylesheets/application.css"
+  	copy_file 	"stylesheets/main.css.scss", "app/assets/stylesheets/main.css.scss"
   end
 
   def git_commit
@@ -34,6 +34,7 @@ class AssetsGenerator < Rails::Generators::Base
   private
 
   def copy_over_vendor_javascripts
+  	puts "Copying over vendor javascripts..."
   	Dir["vendor/javascripts/*"].each do |source|
   		destination = "vendor/assets/javascripts/#{File.basename(source)}"
   		add_if_new(source, destination)
@@ -41,6 +42,7 @@ class AssetsGenerator < Rails::Generators::Base
   end
 
   def copy_over_vendor_stylesheets
+  	puts "Copying over vendor stylesheets..."
   	Dir["vendor/stylesheets/*"].each do |source|
   		destination = "vendor/assets/stylesheets/#{File.basename(source)}"
   		add_if_new(source, destination)
