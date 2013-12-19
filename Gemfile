@@ -30,6 +30,8 @@ group :development, :test do
   gem 'shoulda-matchers'						# cleaner, simpler tests with great validation testing
   gem 'guard'
   gem 'guard-rspec'
+  # gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'growl' # if /darwin/ =~ RUBY_PLATFORM
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-debugger'
@@ -49,8 +51,7 @@ group :test do
   gem 'vcr'                       # record test suite http interactions for playback in future tests
   gem 'webmock'                   # lib for stubbing and setting expectation on HTTP requests
   gem 'launchy'
-  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
-  gem 'growl' if /darwin/ =~ RUBY_PLATFORM
+
 end
 
 group :production do
