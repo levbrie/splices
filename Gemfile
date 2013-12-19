@@ -22,9 +22,6 @@ gem 'rickshaw_rails'                # graphing with scatter plots
 gem 'devise'												# Authentication
 gem 'high_voltage'									# STATIC PAGES
 
-gem 'haml'
-gem 'haml-rails'
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara', '2.2.0'
@@ -68,3 +65,5 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'redcarpet'
 gem 'fabrication'										# object generation library
+gem "momentjs-rails"
+gem "rickshaw_rails"
