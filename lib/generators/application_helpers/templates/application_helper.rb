@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_title
-    "splice"
+    "<%= app_name %>"
   end
 
   # convenience class for icons

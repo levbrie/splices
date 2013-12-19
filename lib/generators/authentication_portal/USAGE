@@ -1,5 +1,8 @@
 Description:
-    Explain the generator
+    Generates a UI for devise-based authentication portals.  Includes sign-up
+    and sign in as well as basic edit profile integration.  Requires you have
+    devise installed and have either run the application_helpers generator
+    or have implemented app_name and gravatar_for methods yourself.
 
 Example:
     rails generate authentication_portal Thing

@@ -15,18 +15,17 @@ class AuthenticationPortalGenerator < Rails::Generators::Base
   	inject_into_file 'app/controllers/application_controller.rb',
   										after: "protect_from_forgery with: :exception\n" do
 	  	<<-RUBY
-			  layout :layout_by_resource
+  layout :layout_by_resource
 
-			  protected
+  protected
 
-			  # admin layout for admins only
-			  def layout_by_resource
-			    if user_signed_in?                   # users are admins in this app
-			      "application"
-			    else
-			      "authentication"
-			    end
-			  end
+  def layout_by_resource
+    if user_signed_in?
+      "application"
+    else
+      "authentication"
+    end
+  end
 			RUBY
 		end
   end
