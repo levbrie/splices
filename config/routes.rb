@@ -1,8 +1,8 @@
 Splices::Application.routes.draw do
   devise_for :users
-  				get "/pages/*id" => 'pages#show', as: :page, format: false
+  get "/pages/*id" => 'pages#show', as: :page, format: false
 
-root :to => 'pages#show', id: 'welcome'
+  root :to => 'pages#show', id: 'welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

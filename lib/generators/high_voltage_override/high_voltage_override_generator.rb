@@ -4,6 +4,7 @@ class HighVoltageOverrideGenerator < Rails::Generators::Base
   argument :page_names, type: :array, required: true
 
   def check_for_and_install_gems
+    ############ NOT YET IMPLEMENTED ##################
   	dependencies = 	%w[ high_voltage, rspec, shoulda ]
   end
 
