@@ -1,0 +1,21 @@
+Description:
+    Generates a PagesController for overriding high_voltage defaults in order
+    to allow HighVoltage to dynamically determine the appropriate layout to use
+    based on current authentication status.
+
+Example:
+    rails generate high_voltage_override page_names
+
+    Arguments:
+    	page_names is a list of pages to add to the rspec test
+    Creates:
+    	* app/controllers/pages_controller.rb
+    	* spec/controllers/pages_controller_spec.rb (
+    Injects Into:
+    	* config/routes.rb
+    Gems:
+    	* depends on shoulda for testing, which it adds in if it isn't in the Gemfile
+    Dependencies:
+    	* high_voltage, rspec, shoulda
+    Expects:
+    	* devise test helpers must be defined for rspec, preferably in spec/support/devise.rb

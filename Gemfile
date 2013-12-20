@@ -25,7 +25,6 @@ gem 'high_voltage'									# STATIC PAGES
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara', '2.2.0'
-  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'shoulda-matchers'						# cleaner, simpler tests with great validation testing
   gem 'guard'
