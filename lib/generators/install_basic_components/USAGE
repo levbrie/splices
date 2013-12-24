@@ -1,0 +1,31 @@
+Description:
+    Installs basic components for a standard Rails 4 app, including devise
+    for authentication, rspec and cucumber for BDD, high_voltage for static
+    pages, and all of the basic configuration to get them up and running
+    properly, including spec/support/devise.rb file for setting up devise
+    test helpers (although there is no simple sign_in macro method yet).
+
+Example:
+    rails generate install_basic_components app_name port_number
+
+    Arguments:
+    	app_name the name of the app where the components are to be installed
+    	port_number the port to be used for setting up devise and for initializing the server
+    Creates:
+    	* all of the standard rspec and cucumber directories, including devise views
+    	* User model integrated with devise
+    	* app/views/pages directory
+    	* app/views/pages/welcome.html.erb page
+    	* config/application.yml file for app-wide ENV variables
+    	* app/controllers/pages_controller.rb
+    	* spec/controllers/pages_controller_spec.rb (
+    Injects Into:
+    	* config/environments/development.rb
+    	* app/views/layouts/application.html.erb
+    	* config/routes.rb
+    Modifies:
+      * .rspec
+    	* app/views/layouts/application.html.erb
+    	* config/environments/database.yml
+    Dependencies:
+    	* high_voltage, rspec-rails, cucumber-rails, figaro

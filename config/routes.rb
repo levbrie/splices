@@ -1,4 +1,8 @@
 Splices::Application.routes.draw do
+  resources :components
+
+  resources :applications
+
   devise_for :users
   get "/pages/*id" => 'pages#show', as: :page, format: false
 
