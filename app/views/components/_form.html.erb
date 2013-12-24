@@ -1,33 +1,46 @@
-<%= form_for(@component) do |f| %>
-  <% if @component.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@component.errors.count, "error") %> prohibited this component from being saved:</h2>
+<section id="content" class="m-t-lg wrapper-md animated fadeInDown">
+  <a class="nav-brand" href="index.html">Register a New Component</a>
+  <div class="row m-n">
+    <div class="col-md-4 col-md-offset-4 m-t-lg">
+      <section class="panel">
+        <header class="panel-heading text-center bg-primary">
+          Create Component
+        </header>
+        <%= form_for(@component, :html => {:class => 'panel-body'}) do |f| %>
+          <% if @component.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@component.errors.count, "error") %> prohibited this component from being saved:</h2>
 
-      <ul>
-      <% @component.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% @component.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <label class="control-label">Name</label>
+            <%= f.text_field :name, {autofocus: true, placeholder: "My Awesome App", class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Description</label>
+            <%= f.text_area :description, {autofocus: true, placeholder: "Your description here...", class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Repository Url</label>
+            <%= f.text_field :repository_url, {autofocus: true, placeholder: "http://github.com/github_usernamea/app", class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Path to Component</label>
+            <%= f.text_field :component_path, {autofocus: true, placeholder: "app/path", class: "form-control"} %>
+          </div>
+          <div>
+            <%= f.submit "Register Component", class: 'btn btn-info', id: "submit" %>
+          </div>
+          <div class="line line-dashed"></div>
+          <%= link_to 'Back', components_path %>
+        <% end %>
+      </section>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :repository_url %><br>
-    <%= f.text_field :repository_url %>
-  </div>
-  <div class="field">
-    <%= f.label :component_path %><br>
-    <%= f.text_field :component_path %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</section>

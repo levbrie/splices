@@ -1,4 +1,5 @@
 Splices::Application.routes.draw do
+  get "grafts/create"
   resources :components
 
   resources :applications

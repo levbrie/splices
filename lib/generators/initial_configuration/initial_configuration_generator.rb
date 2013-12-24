@@ -4,7 +4,7 @@ class InitialConfigurationGenerator < Rails::Generators::Base
   argument :app_name, type: :string
 
   def use_markdown_for_readme
-  	remove_file "#{base_path}/README.rdoc"
+  	remove_file "#{base_path}README.rdoc"
   	copy_file		"README.md", "#{base_path}/README.md"
   end
 
@@ -14,8 +14,8 @@ class InitialConfigurationGenerator < Rails::Generators::Base
   end
 
   def configure_database_yaml
-  	remove_file "#{base_path}/config/database.yml"
-  	template "config/database.yml.erb", "#{base_path}/config/database.yml"
+  	remove_file "#{base_path}config/database.yml"
+  	template "config/database.yml.erb", "#{base_path}config/database.yml"
   end
 
   def git_init_repo
@@ -46,7 +46,7 @@ class InitialConfigurationGenerator < Rails::Generators::Base
   private
 
   def base_path
-  	"/Users/lev/Documents/CS/Rails/splice/sample_apps/" + app_name
+  	"/Users/lev/Documents/CS/Rails/splice/sample_apps/" + app_name + "/"
   end
 
   def commit_and_merge_with_master

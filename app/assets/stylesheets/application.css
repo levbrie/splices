@@ -10,4 +10,5 @@
  *= require plugin
  *= require main
  *= require rickshaw
+ *= require chardinjs/chardinjs
  */

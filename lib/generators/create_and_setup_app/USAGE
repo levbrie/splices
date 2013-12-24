@@ -1,0 +1,11 @@
+Description:
+    Creates a rails app with the name specified as the first argument
+
+Example:
+    rails generate create_and_setup_app app_name
+
+    Arguments:
+    	app_name the name of the app where the components are to be installed
+    	port_number the port to be used for setting up devise and for initializing the server
+    Creates:
+    	* a full rails app

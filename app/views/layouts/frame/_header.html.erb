@@ -1,5 +1,5 @@
 <header class="header bg-black lter navbar navbar-inverse">
-  <div class="collapse navbar-collapse pull-in">
+  <div class="collapse navbar-collapse pull-in" data-intro="The easiest way to get started with Splice: <a href='<%= url_for :controller => 'grafts', :action => 'create', :component => "layout" %>'>Add This App's Layout to Your App </a>" data-position="bottom">
     <%= render 'shared/search' %>
     <form class="navbar-form navbar-left m-t-sm" role="search">
       <div class="form-group">
@@ -7,10 +7,13 @@
           <input type="text" class="form-control input-sm no-border bg-black" placeholder="Search">
           <span class="input-group-btn">
             <button type="submit" class="btn btn-sm btn-default btn-icon"><i class="icon-search"></i></button>
+
           </span>
+
         </div>
       </div>
     </form>
+    <a href="#" class="btn m-b-sm" data-toggle="chardinjs">Add This App's Layout to Your App</a>
     <ul class="nav navbar-nav navbar-right">
       <li class="hidden-xs">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">

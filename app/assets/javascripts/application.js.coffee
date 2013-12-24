@@ -19,4 +19,5 @@
 #= require fuelux/fuelux
 #= require parsley/parsley.min
 #= require parsley/parsley.extend
+#= require chardinjs/chardinjs.min
 #= require_tree .

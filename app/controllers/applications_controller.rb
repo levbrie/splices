@@ -28,6 +28,7 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
+        ApplicationService.new(@application.name.underscore).create_app
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
         format.json { render action: 'show', status: :created, location: @application }
       else
