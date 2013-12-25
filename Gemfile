@@ -3,7 +3,8 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'					# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'pg'											# Use postgresql as the database for Active Record
-gem 'unicorn'											# Use unicorn as the app server
+gem 'unicorn'									# Use unicorn as the app server
+gem 'sidekiq'                 # async jobs
 
 gem 'sass-rails', '~> 4.0.0'				# Use SCSS for stylesheets
 gem 'less-rails'
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-debugger'
+  gem 'railroady'
 end
 
 group :development do

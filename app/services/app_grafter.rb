@@ -13,6 +13,7 @@ class AppGrafter
   	when "application_helpers" then gen("application_helpers #{app_name}")
   	when "assets" then gen("assets #{app_name}")
   	when "authentication_portal" then gen("authentication_portal #{app_name}")
+  	when "high_voltage_override" then gen("high_voltage_override #{app_name} welcome")
   	else
   		"didn't understand"
   	end
