@@ -1,4 +1,6 @@
+require 'sidekiq/web'
 Splices::Application.routes.draw do
+  mount Sidekiq::Web, at: "/sidekiq"
   get "grafts/create"
   resources :components
 

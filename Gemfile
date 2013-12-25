@@ -5,6 +5,8 @@ gem 'rails', '4.0.2'					# Bundle edge Rails instead: gem 'rails', github: 'rail
 gem 'pg'											# Use postgresql as the database for Active Record
 gem 'unicorn'									# Use unicorn as the app server
 gem 'sidekiq'                 # async jobs
+gem 'sinatra', require: false # gem for sidekiq web interface
+gem 'slim'                    # also for sidekiq
 
 gem 'sass-rails', '~> 4.0.0'				# Use SCSS for stylesheets
 gem 'less-rails'

@@ -28,8 +28,9 @@ class ApplicationsController < ApplicationController
 
     respond_to do |format|
       if @application.save
-        ApplicationService.new(@application.name.underscore).create_app
-        format.html { redirect_to @application, notice: 'Application was successfully created.' }
+        AppWorker.perform_async(@application.name.underscore)
+        # ApplicationService.new(@application.name.underscore).create_app
+        format.html { redirect_to @application, notice: 'Your application is being created. This may take a few moments...' }
         format.json { render action: 'show', status: :created, location: @application }
       else
         format.html { render action: 'new' }
