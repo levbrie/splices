@@ -9,10 +9,10 @@ class AppGrafter
 
   def create_graft
   	case component_name
-  	when "layout" then generate("layout #{app_name}")
-  	when "application_helpers" then generate("application_helpers #{app_name}")
-  	when "assets" then generate("assets #{app_name}")
-  	when "authentication_portal" then generate("authentication_portal #{app_name}")
+  	when "layout" then gen("layout #{app_name} --force")
+  	when "application_helpers" then gen("application_helpers #{app_name}")
+  	when "assets" then gen("assets #{app_name}")
+  	when "authentication_portal" then gen("authentication_portal #{app_name}")
   	else
   		"didn't understand"
   	end
@@ -20,7 +20,7 @@ class AppGrafter
 
   private
 
-  def generate(arg_string)
+  def gen(arg_string)
   	`rails generate #{arg_string}`
 	end
 end

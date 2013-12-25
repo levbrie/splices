@@ -6,7 +6,7 @@
         <header class="panel-heading text-center">
           Sign in
         </header>
-        <form action="#" class="panel-body" data-intro="An awesome <a href='http://github.com'>18th-century painter</a>, who found beauty in everyday, common things." data-position="right">
+        <form action="#" class="panel-body" data-intro="<a href='<%= url_for :controller => 'grafts', :action => 'create', :component => "AuthenticationPortal" %>'>Add a fully functional authentication portal to your app</a>, but nota bene, this requires that you have Devise fully installed and are using the latest version of Twitter Bootstrap 3.0.0." data-position="right">
           <div class="form-group">
             <label class="control-label">Email</label>
             <input type="email" placeholder="test@example.com" class="form-control">

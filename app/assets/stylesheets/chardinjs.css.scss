@@ -1,7 +1,15 @@
 .chardinjs-show-element a {
-  color: rgba(77, 186, 240, 1);
+  // color: rgba(77, 186, 240, 1);
+  color: #fff;
 }
 
 .chardinjs-helper-layer[data-id="links"] .chardinjs-tooltip:after {
   left: 10%;
+}
+
+.chardinjs-tooltip {
+	a {
+		color: #4da8c6;
+		font-style: italic;
+	}
 }

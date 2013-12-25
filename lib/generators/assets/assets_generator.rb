@@ -1,6 +1,8 @@
 class AssetsGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
+  argument :app_name, type: :string
+
   def copy_over_vendor_assets
   	copy_over_vendor_javascripts
   	copy_over_vendor_stylesheets
