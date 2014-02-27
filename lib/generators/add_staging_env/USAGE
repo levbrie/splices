@@ -1,0 +1,19 @@
+Description:
+    Adds a staging environment.  Basically a production environment with logging (config.log_level set to true)
+
+Example:
+    rails generate add_staging_env env_name
+
+    Arguments:
+      env_name the name of the environment you wish to use for staging
+    Creates:
+      * config/environments/env_name.rb
+      * spec/controllers/pages_controller_spec.rb (
+    Injects Into:
+      * config/database.yml
+    Gems:
+      * depends on shoulda for testing, which it adds in if it isn't in the Gemfile
+    Dependencies:
+      * high_voltage, rspec, shoulda
+    Expects:
+      * devise test helpers must be defined for rspec, preferably in spec/support/devise.rb

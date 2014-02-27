@@ -1,70 +1,98 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
-gem 'rails', '4.0.2'					# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'pg'											# Use postgresql as the database for Active Record
-gem 'unicorn'											# Use unicorn as the app server
-
-gem 'sass-rails', '~> 4.0.0'				# Use SCSS for stylesheets
-gem 'less-rails'
-gem 'uglifier', '>= 1.3.0'					# Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.0.0'			# Use CoffeeScript for .js.coffee assets and views
-gem 'therubyracer', :require => 'v8'
+gem 'rails', '4.0.3'					      # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'pg'											      # Use postgresql as the database for Active Record
+gem 'unicorn'											  # Use unicorn as the app server
+gem 'sidekiq'                       # async jobs
+gem 'sinatra', require: false       # gem for sidekiq web interface
+gem 'slim'                          # also for sidekiq
 gem 'figaro'                        # global env vars for config
+
+gem 'paperclip'
+gem 'aws-sdk'                       # Amazone AWS for storing files uploaded with paperclip
+gem 'sass-rails', '~> 4.0.1'				# Use SCSS for stylesheets
+
+# JS
+gem 'uglifier', '~> 2.4.0'          # Use Uglifier as compressor for JavaScript assets
+gem 'therubyracer', :require => 'v8'
+gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'									# Use jquery as the JavaScript library
+gem 'jquery-ui-rails'
 gem 'turbolinks'										# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jquery-turbolinks'
+gem 'momentjs-rails'
 gem 'jbuilder', '~> 1.2'						# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-
-
-# GRAPHING
 gem 'rickshaw_rails'                # graphing with scatter plots
+
+# AUTH
 gem 'devise'												# Authentication
+gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'     # for using ActiveModel has_secure_password
+
+# STATIC PAGES
 gem 'high_voltage'									# STATIC PAGES
+# gem 'fabrication'                 # object generation library
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara', '2.2.0'
+  gem 'capybara', '2.2.1'
+  gem 'poltergeist'
   gem 'simplecov'
   gem 'shoulda-matchers'						# cleaner, simpler tests with great validation testing
-  gem 'guard'
-  gem 'guard-rspec'
-  # gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
-  gem 'growl' # if /darwin/ =~ RUBY_PLATFORM
+  gem 'growl' # if /darwin/ =~ RUBY_PLATFORM, # gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-debugger'
+  gem 'awesome_print'
+  gem 'email_spec'                  # collection of RSpec matchers for testing email
+  gem 'railroady'                   # automatic creation of uml diagrams
+  gem 'lol_dba'                     # rake tasks for analyzing models and suggesting db indexing
 end
 
 group :development do
+  gem 'foreman'
+  gem 'launchy'
+  gem 'hirb', '0.7.1'
+  gem 'spring', '~> 1.1.2'
+  gem 'spring-commands-rspec', '~> 1.0.1'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
   gem 'better_errors'             # more helpful error screens for dev
   gem 'binding_of_caller'         # enable REPL and local/instance variable inspection
 end
 
 group :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', '~> 1.4.0', :require => false
-  gem 'selenium-webdriver', '2.35.1'
+  # gem 'selenium-webdriver', '2.35.1'
   gem 'annotate'
-  gem 'factory_girl_rails', '4.2.0'
+  gem 'factory_girl_rails', '4.4.1'
   gem 'database_cleaner'          # removed github address because of PEM auth issues
   gem 'vcr'                       # record test suite http interactions for playback in future tests
   gem 'webmock'                   # lib for stubbing and setting expectation on HTTP requests
-  gem 'launchy'
-
 end
 
 group :production do
-  gem 'rails_12factor', '0.0.2'
+# group :production, :staging do
+  # gem 'memcachier'
+  # gem 'dalli'
+  # gem 'newrelic_rpm'
+  # gem 'rack-cache', '1.2'
+  gem 'rails_12factor'
 end
+
+# group :staging do
+#   gem 'safety_mailer', '0.0.3'
+# end
 
 group :doc do
   gem 'sdoc'											# bundle exec rake doc:rails generates the API under doc/api.
 end
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'redcarpet'
-gem 'fabrication'										# object generation library
-gem "momentjs-rails"
-gem "rickshaw_rails"
-gem "jquery-ui-rails", "2.0.2"
+
+# To use debugger
+# gem 'debugger'
+# ERROR TRACKING
+gem 'bugsnag'

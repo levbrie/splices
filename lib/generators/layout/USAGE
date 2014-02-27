@@ -1,5 +1,5 @@
 Description:
-    Explain the generator
+    Creates a series of directories for organizing the view layouts and creating a structured view directory.  Would be good for UI started if it had some more generic scss and js starter stuff.
 
 Example:
     rails generate layout Thing
