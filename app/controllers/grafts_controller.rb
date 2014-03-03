@@ -1,7 +1,7 @@
 class GraftsController < ApplicationController
   def create
   	@user = current_user
-  	@application = @user.applications.first || nil
+  	@application = @user.applications.last || nil
   	@component = Component.find_by name: params[:component]
 
   	respond_to do |format|
