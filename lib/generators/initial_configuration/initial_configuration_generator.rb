@@ -13,6 +13,46 @@ class InitialConfigurationGenerator < Rails::Generators::Base
   	copy_file 	"gitignore", "#{base_path}.gitignore"
   end
 
+  def provide_setup_script
+    copy_file "bin_setup", "#{base_path}bin/setup"
+    inside "#{base_path}" do
+      run 'chmod a+x bin/setup'
+    end
+  end
+
+  def configure_generators
+    config = <<-RUBY
+  config.generators do |generate|
+    generate.helper false
+    generate.javascript_engine false
+    generate.request_specs false
+    generate.routing_specs false
+    generate.stylesheets false
+    generate.test_framework :rspec
+    generate.view_specs false
+  end
+
+    RUBY
+
+    inject_into_class "#{base_path}config/application.rb", "Application", config
+  end
+
+  def configure_smtp
+      copy_file 'config/initializers/smtp.rb', "#{base_path}config/initializers/smtp.rb"
+
+      prepend_file 'config/environments/production.rb',
+        "require Rails.root.join('config/initializers/smtp')\n"
+
+      config = <<-RUBY
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = SMTP_SETTINGS
+      RUBY
+
+    inject_into_file 'config/environments/production.rb', config,
+      :after => 'config.action_mailer.raise_delivery_errors = false'
+  end
+
   def configure_database_yaml
   	remove_file "#{base_path}config/database.yml"
   	template "config/database.yml.erb", "#{base_path}config/database.yml"

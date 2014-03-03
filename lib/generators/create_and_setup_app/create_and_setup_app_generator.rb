@@ -22,6 +22,28 @@ class CreateAndSetupAppGenerator < Rails::Generators::Base
   	run "rails generate install_basic_components #{app_name}"
   end
 
+  def add_staging_env
+    run "rails generate add_staging_env #{app_name} staging"
+  end
+
+  def setup_foreman
+    run "rails generate setup_foreman #{app_name}"
+  end
+
+  def setup_dotfiles
+    run "rails generate setup_dotfiles #{app_name}"
+  end
+
+  def create_github_repo
+    inside "#{base_path}" do
+      run "hub create levbrie/#{app_name}"
+    end
+  end
+
+  def heroku_create_apps
+    run "rails generate setup_heroku #{app_name}"
+  end
+
   private
 
   def initial_path

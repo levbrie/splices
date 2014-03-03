@@ -1,0 +1,8 @@
+Description:
+  Creates production and staging apps on Heroku
+
+Example:
+  rails generate setup_heroku app_name [options]
+
+Options:
+  [--staging]   # whether or not to create a staging app, default true

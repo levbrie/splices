@@ -91,8 +91,6 @@ group :doc do
 end
 
 gem 'redcarpet'
-
-# To use debugger
-# gem 'debugger'
+# gem 'debugger'                  # To use debugger
 # ERROR TRACKING
 gem 'bugsnag'
