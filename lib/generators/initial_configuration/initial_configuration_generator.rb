@@ -58,6 +58,10 @@ class InitialConfigurationGenerator < Rails::Generators::Base
   	template "config/database.yml.erb", "#{base_path}config/database.yml"
   end
 
+  def add_unicorn_config
+    copy_file 'config/unicorn.rb', "#{base_path}config/unicorn.rb"
+  end
+
   def git_init_repo
   	inside "#{base_path}" do
 	  	git :init
