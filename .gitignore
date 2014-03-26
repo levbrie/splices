@@ -30,3 +30,7 @@ doc/
 
 # ignore photo uploads
 /public/system.env
+
+# ignore redis snapshots
+dump.rdb
+*.rdb
