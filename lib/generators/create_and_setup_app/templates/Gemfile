@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.1'
 
 gem 'rails', '4.0.3'					      # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'pg'											      # Use postgresql as the database for Active Record
@@ -11,7 +11,7 @@ gem 'figaro'                        # global env vars for config
 
 gem 'paperclip'
 gem 'aws-sdk'                       # Amazone AWS for storing files uploaded with paperclip
-gem 'sass-rails', '~> 4.0.1'				# Use SCSS for stylesheets
+gem 'sass-rails'				# Use SCSS for stylesheets
 
 # JS
 gem 'uglifier', '~> 2.4.0'          # Use Uglifier as compressor for JavaScript assets

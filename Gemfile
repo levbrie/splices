@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.2'					# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.3'          # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'pg'											# Use postgresql as the database for Active Record
 gem 'unicorn'									# Use unicorn as the app server
 gem 'sidekiq'                 # async jobs
@@ -9,7 +9,6 @@ gem 'sinatra', require: false # gem for sidekiq web interface
 gem 'slim'                    # also for sidekiq
 
 gem 'sass-rails', '~> 4.0.0'				# Use SCSS for stylesheets
-gem 'less-rails'
 gem 'uglifier', '>= 1.3.0'					# Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'			# Use CoffeeScript for .js.coffee assets and views
 gem 'therubyracer', :require => 'v8'
@@ -27,7 +26,8 @@ gem 'high_voltage'									# STATIC PAGES
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara', '2.2.0'
+  gem 'capybara', '2.2.1'
+  gem 'poltergeist'
   gem 'simplecov'
   gem 'shoulda-matchers'						# cleaner, simpler tests with great validation testing
   gem 'guard'
@@ -47,7 +47,7 @@ end
 
 group :test do
   gem 'cucumber-rails', '~> 1.4.0', :require => false
-  gem 'selenium-webdriver', '2.35.1'
+  # gem 'selenium-webdriver', '2.35.1'
   gem 'annotate'
   gem 'factory_girl_rails', '4.2.0'
   gem 'database_cleaner'          # removed github address because of PEM auth issues
@@ -70,5 +70,4 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 gem 'redcarpet'
 gem 'fabrication'										# object generation library
 gem "momentjs-rails"
-gem "rickshaw_rails"
 gem "jquery-ui-rails", "2.0.2"

@@ -49,7 +49,7 @@ class AssetsGenerator < Rails::Generators::Base
   end
 
   def base_path
-    "/Users/lev/Documents/CS/Rails/splice/sample_apps/" + app_name + "/"
+    "/Users/lev/git/github/splice/sample_apps/" + app_name + "/"
   end
 
   def copy_over_vendor_javascripts

@@ -41,16 +41,16 @@ class CreateAndSetupAppGenerator < Rails::Generators::Base
   end
 
   def heroku_create_apps
-    run "rails generate setup_heroku #{app_name}"
+    # run "rails generate setup_heroku #{app_name}"
   end
 
   private
 
   def initial_path
-  	"/Users/lev/Documents/CS/Rails/splice/sample_apps/"
+  	"/Users/lev/git/github/splice/sample_apps/"
   end
 
   def base_path
-  	"/Users/lev/Documents/CS/Rails/splice/sample_apps/" + app_name + "/"
+  	"/Users/lev/git/github/splice/sample_apps/" + app_name + "/"
   end
 end
